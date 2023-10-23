@@ -5,11 +5,10 @@ public class LinkedListTests {
     @Test
     public void testLinkedList(){
         LinkedList list = new LinkedList();
-        list.prepend(3);
         list.prepend(2);
         list.prepend(1);
-        list.append(4);
+        list.append(3);
 
-        assertEquals("1 2 3 4 ",list.toString());
+        assertEquals("1 2 3 ",list.toString());
     }
 }

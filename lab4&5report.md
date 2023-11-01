@@ -30,7 +30,7 @@ static void reverseInPlace(int[] arr) {
     }
 }
 ```
-For testReverseInPlace, divide the arr.length in the condition statement in the for loop by 2 and create a new int variable to store the current arr[i] before copying arr[arr.length - i - 1] to arr[i]. Then copy the value in current to arr[arr.length - i - 1]. The code after the fix is:
+A reason why we are not getting the expected output is that the reverseInPlace method loops through the whole array. This means that even if we assume that it does swap elements, it swaps them twice hence no swap at all. In fact, the replaceInPlace method fails to swap the elements. It merely copies the element from the back and use them to replace the elements in the front half. To fix it we need to divide the arr.length in the condition statement in the for loop by 2 and create a new int variable to store the current arr[i] before copying arr[arr.length - i - 1] to arr[i]. Then copy the value in current to arr[arr.length - i - 1]. The code after the fix is:
 ```
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length/2; i += 1) {

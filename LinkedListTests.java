@@ -8,7 +8,15 @@ public class LinkedListTests {
         list.prepend(2);
         list.prepend(1);
         list.append(3);
+        list.append(4);
 
-        assertEquals("1 2 3 ",list.toString());
+        assertEquals("1 2 3 4 ",list.toString());
+    }
+    @Test
+    public void testLinkedListSucceed(){
+        LinkedList list = new LinkedList();
+        list.prepend(1);
+
+        assertEquals(1,list.first());
     }
 }
